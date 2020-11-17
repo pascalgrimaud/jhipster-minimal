@@ -1,5 +1,8 @@
 package io.github.jhipster.common.infrastructure.config;
 
+import io.github.jhipster.user.infrastructure.secondary.AuthorityEntity;
+import io.github.jhipster.user.infrastructure.secondary.UserEntity;
+import io.github.jhipster.user.infrastructure.secondary.UserRepository;
 import java.time.Duration;
 import org.ehcache.config.builders.*;
 import org.ehcache.jsr107.Eh107Configuration;
@@ -43,11 +46,11 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
-            createCache(cm, io.github.jhipster.repository.UserRepository.USERS_BY_LOGIN_CACHE);
-            createCache(cm, io.github.jhipster.repository.UserRepository.USERS_BY_EMAIL_CACHE);
-            createCache(cm, io.github.jhipster.domain.User.class.getName());
-            createCache(cm, io.github.jhipster.domain.Authority.class.getName());
-            createCache(cm, io.github.jhipster.domain.User.class.getName() + ".authorities");
+            createCache(cm, UserRepository.USERS_BY_LOGIN_CACHE);
+            createCache(cm, UserRepository.USERS_BY_EMAIL_CACHE);
+            createCache(cm, UserEntity.class.getName());
+            createCache(cm, AuthorityEntity.class.getName());
+            createCache(cm, UserEntity.class.getName() + ".authorities");
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,7 +1,7 @@
 package io.github.jhipster.security;
 
-import io.github.jhipster.domain.User;
-import io.github.jhipster.repository.UserRepository;
+import io.github.jhipster.user.infrastructure.secondary.UserEntity;
+import io.github.jhipster.user.infrastructure.secondary.UserRepository;
 import java.util.*;
 import java.util.stream.Collectors;
 import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
@@ -48,15 +48,15 @@ public class DomainUserDetailsService implements UserDetailsService {
             .orElseThrow(() -> new UsernameNotFoundException("User " + lowercaseLogin + " was not found in the database"));
     }
 
-    private org.springframework.security.core.userdetails.User createSpringSecurityUser(String lowercaseLogin, User user) {
-        if (!user.isActivated()) {
+    private org.springframework.security.core.userdetails.User createSpringSecurityUser(String lowercaseLogin, UserEntity userEntity) {
+        if (!userEntity.isActivated()) {
             throw new UserNotActivatedException("User " + lowercaseLogin + " was not activated");
         }
-        List<GrantedAuthority> grantedAuthorities = user
+        List<GrantedAuthority> grantedAuthorities = userEntity
             .getAuthorities()
             .stream()
             .map(authority -> new SimpleGrantedAuthority(authority.getName()))
             .collect(Collectors.toList());
-        return new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPassword(), grantedAuthorities);
+        return new org.springframework.security.core.userdetails.User(userEntity.getLogin(), userEntity.getPassword(), grantedAuthorities);
     }
 }

@@ -6,7 +6,7 @@ import static org.mockito.Mockito.*;
 
 import io.github.jhipster.JhipsterMinimalApp;
 import io.github.jhipster.common.infrastructure.config.Constants;
-import io.github.jhipster.domain.User;
+import io.github.jhipster.user.infrastructure.secondary.UserEntity;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -133,15 +133,15 @@ class MailServiceIT {
 
     @Test
     void testSendEmailFromTemplate() throws Exception {
-        User user = new User();
-        user.setLogin("john");
-        user.setEmail("john.doe@example.com");
-        user.setLangKey("en");
-        mailService.sendEmailFromTemplate(user, "mail/testEmail", "email.test.title");
+        UserEntity userEntity = new UserEntity();
+        userEntity.setLogin("john");
+        userEntity.setEmail("john.doe@example.com");
+        userEntity.setLangKey("en");
+        mailService.sendEmailFromTemplate(userEntity, "mail/testEmail", "email.test.title");
         verify(javaMailSender).send(messageCaptor.capture());
         MimeMessage message = messageCaptor.getValue();
         assertThat(message.getSubject()).isEqualTo("test title");
-        assertThat(message.getAllRecipients()[0]).hasToString(user.getEmail());
+        assertThat(message.getAllRecipients()[0]).hasToString(userEntity.getEmail());
         assertThat(message.getFrom()[0]).hasToString(jHipsterProperties.getMail().getFrom());
         assertThat(message.getContent().toString()).isEqualToNormalizingNewlines("<html>test title, http://127.0.0.1:8080, john</html>\n");
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
@@ -149,14 +149,14 @@ class MailServiceIT {
 
     @Test
     void testSendActivationEmail() throws Exception {
-        User user = new User();
-        user.setLangKey(Constants.DEFAULT_LANGUAGE);
-        user.setLogin("john");
-        user.setEmail("john.doe@example.com");
-        mailService.sendActivationEmail(user);
+        UserEntity userEntity = new UserEntity();
+        userEntity.setLangKey(Constants.DEFAULT_LANGUAGE);
+        userEntity.setLogin("john");
+        userEntity.setEmail("john.doe@example.com");
+        mailService.sendActivationEmail(userEntity);
         verify(javaMailSender).send(messageCaptor.capture());
         MimeMessage message = messageCaptor.getValue();
-        assertThat(message.getAllRecipients()[0]).hasToString(user.getEmail());
+        assertThat(message.getAllRecipients()[0]).hasToString(userEntity.getEmail());
         assertThat(message.getFrom()[0]).hasToString(jHipsterProperties.getMail().getFrom());
         assertThat(message.getContent().toString()).isNotEmpty();
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
@@ -164,14 +164,14 @@ class MailServiceIT {
 
     @Test
     void testCreationEmail() throws Exception {
-        User user = new User();
-        user.setLangKey(Constants.DEFAULT_LANGUAGE);
-        user.setLogin("john");
-        user.setEmail("john.doe@example.com");
-        mailService.sendCreationEmail(user);
+        UserEntity userEntity = new UserEntity();
+        userEntity.setLangKey(Constants.DEFAULT_LANGUAGE);
+        userEntity.setLogin("john");
+        userEntity.setEmail("john.doe@example.com");
+        mailService.sendCreationEmail(userEntity);
         verify(javaMailSender).send(messageCaptor.capture());
         MimeMessage message = messageCaptor.getValue();
-        assertThat(message.getAllRecipients()[0]).hasToString(user.getEmail());
+        assertThat(message.getAllRecipients()[0]).hasToString(userEntity.getEmail());
         assertThat(message.getFrom()[0]).hasToString(jHipsterProperties.getMail().getFrom());
         assertThat(message.getContent().toString()).isNotEmpty();
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
@@ -179,14 +179,14 @@ class MailServiceIT {
 
     @Test
     void testSendPasswordResetMail() throws Exception {
-        User user = new User();
-        user.setLangKey(Constants.DEFAULT_LANGUAGE);
-        user.setLogin("john");
-        user.setEmail("john.doe@example.com");
-        mailService.sendPasswordResetMail(user);
+        UserEntity userEntity = new UserEntity();
+        userEntity.setLangKey(Constants.DEFAULT_LANGUAGE);
+        userEntity.setLogin("john");
+        userEntity.setEmail("john.doe@example.com");
+        mailService.sendPasswordResetMail(userEntity);
         verify(javaMailSender).send(messageCaptor.capture());
         MimeMessage message = messageCaptor.getValue();
-        assertThat(message.getAllRecipients()[0]).hasToString(user.getEmail());
+        assertThat(message.getAllRecipients()[0]).hasToString(userEntity.getEmail());
         assertThat(message.getFrom()[0]).hasToString(jHipsterProperties.getMail().getFrom());
         assertThat(message.getContent().toString()).isNotEmpty();
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
@@ -204,12 +204,12 @@ class MailServiceIT {
 
     @Test
     void testSendLocalizedEmailForAllSupportedLanguages() throws Exception {
-        User user = new User();
-        user.setLogin("john");
-        user.setEmail("john.doe@example.com");
+        UserEntity userEntity = new UserEntity();
+        userEntity.setLogin("john");
+        userEntity.setEmail("john.doe@example.com");
         for (String langKey : languages) {
-            user.setLangKey(langKey);
-            mailService.sendEmailFromTemplate(user, "mail/testEmail", "email.test.title");
+            userEntity.setLangKey(langKey);
+            mailService.sendEmailFromTemplate(userEntity, "mail/testEmail", "email.test.title");
             verify(javaMailSender, atLeastOnce()).send(messageCaptor.capture());
             MimeMessage message = messageCaptor.getValue();
 

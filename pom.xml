@@ -611,7 +611,7 @@
                                 <JHIPSTER_SLEEP>0</JHIPSTER_SLEEP>
                             </environment>
                             <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
-                            <user>1000</user>
+                            <userEntity>1000</userEntity>
                         </container>
                         <extraDirectories>
                             <paths>src/main/docker/jib</paths>
