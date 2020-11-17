@@ -1,4 +1,4 @@
-package io.github.jhipster.web.rest;
+package io.github.jhipster.user.infrastructure.primary.rest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import io.github.jhipster.JhipsterMinimalApp;
+import io.github.jhipster.common.infrastructure.primary.TestUtil;
 import io.github.jhipster.security.AuthoritiesConstants;
 import io.github.jhipster.service.mapper.UserMapper;
 import io.github.jhipster.user.infrastructure.primary.dto.ManagedUserDTO;

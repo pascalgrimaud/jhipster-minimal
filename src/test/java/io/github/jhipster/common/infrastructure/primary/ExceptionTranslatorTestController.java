@@ -1,4 +1,4 @@
-package io.github.jhipster.web.rest.errors;
+package io.github.jhipster.common.infrastructure.primary;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
