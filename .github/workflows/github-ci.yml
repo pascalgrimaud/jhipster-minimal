@@ -1,8 +1,5 @@
 name: Application CI
-on:
-    push:
-        - "main"
-    pull_request:
+on: [push, pull_request]
 jobs:
     pipeline:
         name: jhipsterMinimal pipeline
