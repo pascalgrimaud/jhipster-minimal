@@ -1,4 +1,4 @@
-package io.github.jhipster.web.rest;
+package io.github.jhipster.common.infrastructure.primary;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

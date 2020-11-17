@@ -1,4 +1,4 @@
-package io.github.jhipster.web.rest;
+package io.github.jhipster.common.infrastructure.primary;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

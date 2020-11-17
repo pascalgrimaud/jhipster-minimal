@@ -1,19 +1,20 @@
-package io.github.jhipster.web.rest;
+package io.github.jhipster.user.infrastructure.primary.rest;
 
-import static io.github.jhipster.web.rest.AccountResourceIT.TEST_USER_LOGIN;
+import static io.github.jhipster.user.infrastructure.primary.rest.AccountResourceIT.TEST_USER_LOGIN;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import io.github.jhipster.JhipsterMinimalApp;
 import io.github.jhipster.common.infrastructure.config.Constants;
+import io.github.jhipster.common.infrastructure.primary.TestUtil;
+import io.github.jhipster.common.infrastructure.primary.WithUnauthenticatedMockUser;
 import io.github.jhipster.security.AuthoritiesConstants;
 import io.github.jhipster.user.application.UserApplicationService;
 import io.github.jhipster.user.infrastructure.primary.dto.KeyAndPasswordDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.ManagedUserDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.PasswordChangeDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.UserDTO;
-import io.github.jhipster.user.infrastructure.primary.rest.AccountResource;
 import io.github.jhipster.user.infrastructure.secondary.AuthorityRepository;
 import io.github.jhipster.user.infrastructure.secondary.UserEntity;
 import io.github.jhipster.user.infrastructure.secondary.UserRepository;

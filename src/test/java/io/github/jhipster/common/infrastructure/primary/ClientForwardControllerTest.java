@@ -1,4 +1,4 @@
-package io.github.jhipster.web.rest;
+package io.github.jhipster.common.infrastructure.primary;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
