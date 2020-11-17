@@ -1,5 +1,6 @@
 package io.github.jhipster.security;
 
+import io.github.jhipster.security.AuthoritiesConstants;
 import java.util.Optional;
 import java.util.stream.Stream;
 import org.springframework.security.core.Authentication;

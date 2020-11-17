@@ -1,8 +1,8 @@
 package io.github.jhipster.web.rest;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.github.jhipster.security.jwt.JWTFilter;
-import io.github.jhipster.security.jwt.TokenProvider;
+import io.github.jhipster.common.infrastructure.primary.jwt.JWTFilter;
+import io.github.jhipster.common.infrastructure.primary.jwt.TokenProvider;
 import io.github.jhipster.web.rest.vm.LoginVM;
 import javax.validation.Valid;
 import org.springframework.http.HttpHeaders;

@@ -1,6 +1,6 @@
 package io.github.jhipster;
 
-import io.github.jhipster.config.ApplicationProperties;
+import io.github.jhipster.common.infrastructure.config.ApplicationProperties;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;

@@ -1,6 +1,6 @@
 package io.github.jhipster.service.dto;
 
-import io.github.jhipster.config.Constants;
+import io.github.jhipster.common.infrastructure.config.Constants;
 import io.github.jhipster.domain.Authority;
 import io.github.jhipster.domain.User;
 import java.time.Instant;

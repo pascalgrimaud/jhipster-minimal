@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 import io.github.jhipster.JhipsterMinimalApp;
-import io.github.jhipster.config.Constants;
+import io.github.jhipster.common.infrastructure.config.Constants;
 import io.github.jhipster.domain.User;
 import io.github.jhipster.repository.UserRepository;
 import io.github.jhipster.service.dto.UserDTO;

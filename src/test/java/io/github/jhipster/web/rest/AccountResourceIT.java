@@ -6,7 +6,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import io.github.jhipster.JhipsterMinimalApp;
-import io.github.jhipster.config.Constants;
+import io.github.jhipster.common.infrastructure.config.Constants;
 import io.github.jhipster.domain.User;
 import io.github.jhipster.repository.AuthorityRepository;
 import io.github.jhipster.repository.UserRepository;

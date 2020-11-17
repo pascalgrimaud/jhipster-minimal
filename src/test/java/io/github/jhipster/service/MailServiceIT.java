@@ -5,7 +5,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 import io.github.jhipster.JhipsterMinimalApp;
-import io.github.jhipster.config.Constants;
+import io.github.jhipster.common.infrastructure.config.Constants;
 import io.github.jhipster.domain.User;
 import java.io.ByteArrayOutputStream;
 import java.io.File;

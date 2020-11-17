@@ -1,7 +1,7 @@
 package io.github.jhipster.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.github.jhipster.config.Constants;
+import io.github.jhipster.common.infrastructure.config.Constants;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;

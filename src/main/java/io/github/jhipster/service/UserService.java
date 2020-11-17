@@ -1,6 +1,6 @@
 package io.github.jhipster.service;
 
-import io.github.jhipster.config.Constants;
+import io.github.jhipster.common.infrastructure.config.Constants;
 import io.github.jhipster.domain.Authority;
 import io.github.jhipster.domain.User;
 import io.github.jhipster.repository.AuthorityRepository;
