@@ -1,37 +1,37 @@
 <template>
   <div class="row justify-content-center">
     <div class="col-8">
-      <div v-if="userEntity">
+      <div v-if="user">
         <h2 class="jh-entity-heading">
-          <span>User</span> [<b>{{ userEntity.login }}</b
+          <span>User</span> [<b>{{ user.login }}</b
           >]
         </h2>
         <dl class="row jh-entity-details">
           <dt><span>Login</span></dt>
           <dd>
-            <span>{{ userEntity.login }}</span>
-            <b-badge variant="success" v-if="userEntity.activated">Activated</b-badge>
-            <b-badge variant="danger" v-if="!userEntity.activated">Deactivated</b-badge>
+            <span>{{ user.login }}</span>
+            <b-badge variant="success" v-if="user.activated">Activated</b-badge>
+            <b-badge variant="danger" v-if="!user.activated">Deactivated</b-badge>
           </dd>
           <dt><span>First Name</span></dt>
-          <dd>{{ userEntity.firstName }}</dd>
+          <dd>{{ user.firstName }}</dd>
           <dt><span>Last Name</span></dt>
-          <dd>{{ userEntity.lastName }}</dd>
+          <dd>{{ user.lastName }}</dd>
           <dt><span>Email</span></dt>
-          <dd>{{ userEntity.email }}</dd>
+          <dd>{{ user.email }}</dd>
           <dt><span>Created By</span></dt>
-          <dd>{{ userEntity.createdBy }}</dd>
+          <dd>{{ user.createdBy }}</dd>
           <dt><span>Created Date</span></dt>
-          <dd>{{ userEntity.createdDate | formatDate }}</dd>
+          <dd>{{ user.createdDate | formatDate }}</dd>
           <dt><span>Last Modified By</span></dt>
-          <dd>{{ userEntity.lastModifiedBy }}</dd>
+          <dd>{{ user.lastModifiedBy }}</dd>
           <dt><span>Last Modified Date</span></dt>
-          <dd>{{ userEntity.lastModifiedDate | formatDate }}</dd>
+          <dd>{{ user.lastModifiedDate | formatDate }}</dd>
           <dt><span>Profiles</span></dt>
           <dd>
             <ul class="list-unstyled">
-              <li v-for="authorityEntity of userEntity.authorities" :key="authorityEntity">
-                <b-badge variant="info">{{ authorityEntity }}</b-badge>
+              <li v-for="authority of user.authorities" :key="authority">
+                <b-badge variant="info">{{ authority }}</b-badge>
               </li>
             </ul>
           </dd>
@@ -44,4 +44,4 @@
   </div>
 </template>
 
-<script lang="ts" src="./userEntity-management-view.component.ts"></script>
+<script lang="ts" src="./user-management-view.component.ts"></script>

@@ -44,7 +44,7 @@
             <font-awesome-icon icon="userEntities-cog" />
             <span class="no-bold">Administration</span>
           </span>
-          <b-dropdown-item to="/admin/userEntity-management" active-class="active">
+          <b-dropdown-item to="/admin/user-management" active-class="active">
             <font-awesome-icon icon="userEntities" />
             <span>User management</span>
           </b-dropdown-item>
@@ -79,7 +79,7 @@
           data-cy="accountMenu"
         >
           <span slot="button-content" class="navbar-dropdown-menu">
-            <font-awesome-icon icon="userEntity" />
+            <font-awesome-icon icon="user" />
             <span class="no-bold"> Account </span>
           </span>
           <b-dropdown-item data-cy="settings" to="/account/settings" tag="b-dropdown-item" v-if="authenticated" active-class="active">
@@ -106,7 +106,7 @@
             v-if="!authenticated"
             active-class="active"
           >
-            <font-awesome-icon icon="userEntity-plus" />
+            <font-awesome-icon icon="user-plus" />
             <span>Register</span>
           </b-dropdown-item>
         </b-nav-item-dropdown>
