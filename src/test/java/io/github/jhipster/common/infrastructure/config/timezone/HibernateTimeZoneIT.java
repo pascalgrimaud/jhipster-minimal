@@ -4,8 +4,8 @@ import static java.lang.String.format;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import io.github.jhipster.JhipsterMinimalApp;
-import io.github.jhipster.repository.timezone.DateTimeWrapper;
-import io.github.jhipster.repository.timezone.DateTimeWrapperRepository;
+import io.github.jhipster.common.infrastructure.secondary.DateTimeWrapper;
+import io.github.jhipster.common.infrastructure.secondary.DateTimeWrapperRepository;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import org.junit.jupiter.api.BeforeEach;

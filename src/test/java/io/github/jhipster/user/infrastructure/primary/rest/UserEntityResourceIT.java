@@ -7,15 +7,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import io.github.jhipster.JhipsterMinimalApp;
+import io.github.jhipster.common.domain.AuthoritiesConstants;
 import io.github.jhipster.common.infrastructure.primary.TestUtil;
-import io.github.jhipster.security.AuthoritiesConstants;
-import io.github.jhipster.service.mapper.UserMapper;
+import io.github.jhipster.user.application.mapper.UserMapper;
 import io.github.jhipster.user.infrastructure.primary.dto.ManagedUserDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.UserDTO;
-import io.github.jhipster.user.infrastructure.primary.rest.UserResource;
-import io.github.jhipster.user.infrastructure.secondary.AuthorityEntity;
-import io.github.jhipster.user.infrastructure.secondary.UserEntity;
-import io.github.jhipster.user.infrastructure.secondary.UserRepository;
+import io.github.jhipster.user.infrastructure.secondary.database.AuthorityEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.UserEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.UserRepository;
 import java.time.Instant;
 import java.util.*;
 import java.util.function.Consumer;

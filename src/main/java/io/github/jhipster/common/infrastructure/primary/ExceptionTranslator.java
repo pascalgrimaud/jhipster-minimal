@@ -1,11 +1,10 @@
 package io.github.jhipster.common.infrastructure.primary;
 
-import io.github.jhipster.common.application.errors.BadRequestAlertException;
-import io.github.jhipster.common.application.errors.ErrorConstants;
-import io.github.jhipster.user.application.errors.EmailAlreadyUsedException;
-import io.github.jhipster.user.application.errors.InvalidPasswordException;
-import io.github.jhipster.user.application.errors.LoginAlreadyUsedException;
-import io.github.jhipster.user.application.errors.UsernameAlreadyUsedException;
+import io.github.jhipster.common.domain.ErrorConstants;
+import io.github.jhipster.user.application.error.EmailAlreadyUsedException;
+import io.github.jhipster.user.application.error.InvalidPasswordException;
+import io.github.jhipster.user.application.error.LoginAlreadyUsedException;
+import io.github.jhipster.user.application.error.UsernameAlreadyUsedException;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.Collection;
@@ -121,7 +120,7 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
 
     @ExceptionHandler
     public ResponseEntity<Problem> handleEmailAlreadyUsedException(
-        io.github.jhipster.service.EmailAlreadyUsedException ex,
+        io.github.jhipster.user.domain.EmailAlreadyUsedException ex,
         NativeWebRequest request
     ) {
         EmailAlreadyUsedException problem = new EmailAlreadyUsedException();
@@ -144,7 +143,7 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
 
     @ExceptionHandler
     public ResponseEntity<Problem> handleInvalidPasswordException(
-        io.github.jhipster.service.InvalidPasswordException ex,
+        io.github.jhipster.user.domain.InvalidPasswordException ex,
         NativeWebRequest request
     ) {
         return create(new InvalidPasswordException(), request);

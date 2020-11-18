@@ -1,16 +1,16 @@
 package io.github.jhipster.user.application;
 
-import io.github.jhipster.common.infrastructure.config.Constants;
-import io.github.jhipster.security.AuthoritiesConstants;
-import io.github.jhipster.security.SecurityUtils;
-import io.github.jhipster.service.EmailAlreadyUsedException;
-import io.github.jhipster.service.InvalidPasswordException;
-import io.github.jhipster.user.application.errors.UsernameAlreadyUsedException;
+import io.github.jhipster.common.application.SecurityUtils;
+import io.github.jhipster.common.domain.AuthoritiesConstants;
+import io.github.jhipster.common.domain.Constants;
+import io.github.jhipster.user.application.error.UsernameAlreadyUsedException;
+import io.github.jhipster.user.domain.EmailAlreadyUsedException;
+import io.github.jhipster.user.domain.InvalidPasswordException;
 import io.github.jhipster.user.infrastructure.primary.dto.UserDTO;
-import io.github.jhipster.user.infrastructure.secondary.AuthorityEntity;
-import io.github.jhipster.user.infrastructure.secondary.AuthorityRepository;
-import io.github.jhipster.user.infrastructure.secondary.UserEntity;
-import io.github.jhipster.user.infrastructure.secondary.UserRepository;
+import io.github.jhipster.user.infrastructure.secondary.database.AuthorityEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.AuthorityRepository;
+import io.github.jhipster.user.infrastructure.secondary.database.UserEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.UserRepository;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.*;

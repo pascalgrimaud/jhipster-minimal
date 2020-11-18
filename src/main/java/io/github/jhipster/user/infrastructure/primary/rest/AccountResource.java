@@ -1,17 +1,17 @@
 package io.github.jhipster.user.infrastructure.primary.rest;
 
-import io.github.jhipster.security.SecurityUtils;
-import io.github.jhipster.service.MailService;
+import io.github.jhipster.common.application.SecurityUtils;
 import io.github.jhipster.user.application.UserApplicationService;
-import io.github.jhipster.user.application.errors.EmailAlreadyUsedException;
-import io.github.jhipster.user.application.errors.InvalidPasswordException;
-import io.github.jhipster.user.application.errors.LoginAlreadyUsedException;
+import io.github.jhipster.user.application.error.EmailAlreadyUsedException;
+import io.github.jhipster.user.application.error.InvalidPasswordException;
+import io.github.jhipster.user.application.error.LoginAlreadyUsedException;
 import io.github.jhipster.user.infrastructure.primary.dto.KeyAndPasswordDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.ManagedUserDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.PasswordChangeDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.UserDTO;
-import io.github.jhipster.user.infrastructure.secondary.UserEntity;
-import io.github.jhipster.user.infrastructure.secondary.UserRepository;
+import io.github.jhipster.user.infrastructure.secondary.database.UserEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.UserRepository;
+import io.github.jhipster.user.infrastructure.secondary.smtp.MailService;
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;

@@ -7,8 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import io.github.jhipster.JhipsterMinimalApp;
-import io.github.jhipster.common.application.errors.ErrorConstants;
-import io.github.jhipster.common.infrastructure.primary.ExceptionTranslator;
+import io.github.jhipster.common.domain.ErrorConstants;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

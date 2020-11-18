@@ -1,8 +1,8 @@
 package io.github.jhipster.user.infrastructure.primary.dto;
 
-import io.github.jhipster.common.infrastructure.config.Constants;
-import io.github.jhipster.user.infrastructure.secondary.AuthorityEntity;
-import io.github.jhipster.user.infrastructure.secondary.UserEntity;
+import io.github.jhipster.common.domain.Constants;
+import io.github.jhipster.user.infrastructure.secondary.database.AuthorityEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.UserEntity;
 import java.time.Instant;
 import java.util.Set;
 import java.util.stream.Collectors;

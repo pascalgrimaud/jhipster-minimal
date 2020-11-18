@@ -1,8 +1,8 @@
 package io.github.jhipster.common.infrastructure.config;
 
-import io.github.jhipster.user.infrastructure.secondary.AuthorityEntity;
-import io.github.jhipster.user.infrastructure.secondary.UserEntity;
-import io.github.jhipster.user.infrastructure.secondary.UserRepository;
+import io.github.jhipster.user.infrastructure.secondary.database.AuthorityEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.UserEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.UserRepository;
 import java.time.Duration;
 import org.ehcache.config.builders.*;
 import org.ehcache.jsr107.Eh107Configuration;
