@@ -2,7 +2,7 @@ package io.github.jhipster.common.infrastructure.primary.jwt;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import io.github.jhipster.security.AuthoritiesConstants;
+import io.github.jhipster.common.domain.AuthoritiesConstants;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import java.util.Collections;

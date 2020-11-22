@@ -1,15 +1,15 @@
 package io.github.jhipster.user.infrastructure.primary.rest;
 
-import io.github.jhipster.common.application.errors.BadRequestAlertException;
-import io.github.jhipster.common.infrastructure.config.Constants;
-import io.github.jhipster.security.AuthoritiesConstants;
-import io.github.jhipster.service.MailService;
+import io.github.jhipster.common.domain.AuthoritiesConstants;
+import io.github.jhipster.common.domain.Constants;
+import io.github.jhipster.common.infrastructure.primary.BadRequestAlertException;
 import io.github.jhipster.user.application.UserApplicationService;
-import io.github.jhipster.user.application.errors.EmailAlreadyUsedException;
-import io.github.jhipster.user.application.errors.LoginAlreadyUsedException;
+import io.github.jhipster.user.application.error.EmailAlreadyUsedException;
+import io.github.jhipster.user.application.error.LoginAlreadyUsedException;
 import io.github.jhipster.user.infrastructure.primary.dto.UserDTO;
-import io.github.jhipster.user.infrastructure.secondary.UserEntity;
-import io.github.jhipster.user.infrastructure.secondary.UserRepository;
+import io.github.jhipster.user.infrastructure.secondary.database.UserEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.UserRepository;
+import io.github.jhipster.user.infrastructure.secondary.smtp.MailService;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.*;

@@ -6,18 +6,18 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import io.github.jhipster.JhipsterMinimalApp;
-import io.github.jhipster.common.infrastructure.config.Constants;
+import io.github.jhipster.common.domain.AuthoritiesConstants;
+import io.github.jhipster.common.domain.Constants;
 import io.github.jhipster.common.infrastructure.primary.TestUtil;
 import io.github.jhipster.common.infrastructure.primary.WithUnauthenticatedMockUser;
-import io.github.jhipster.security.AuthoritiesConstants;
 import io.github.jhipster.user.application.UserApplicationService;
 import io.github.jhipster.user.infrastructure.primary.dto.KeyAndPasswordDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.ManagedUserDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.PasswordChangeDTO;
 import io.github.jhipster.user.infrastructure.primary.dto.UserDTO;
-import io.github.jhipster.user.infrastructure.secondary.AuthorityRepository;
-import io.github.jhipster.user.infrastructure.secondary.UserEntity;
-import io.github.jhipster.user.infrastructure.secondary.UserRepository;
+import io.github.jhipster.user.infrastructure.secondary.database.AuthorityRepository;
+import io.github.jhipster.user.infrastructure.secondary.database.UserEntity;
+import io.github.jhipster.user.infrastructure.secondary.database.UserRepository;
 import java.time.Instant;
 import java.util.*;
 import org.apache.commons.lang3.RandomStringUtils;

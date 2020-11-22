@@ -1,8 +1,8 @@
 package io.github.jhipster.common.infrastructure.config;
 
+import io.github.jhipster.common.domain.AuthoritiesConstants;
 import io.github.jhipster.common.infrastructure.primary.jwt.*;
 import io.github.jhipster.common.infrastructure.primary.jwt.TokenProvider;
-import io.github.jhipster.security.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;
