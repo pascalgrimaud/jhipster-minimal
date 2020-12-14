@@ -4,6 +4,7 @@ import io.github.jhipster.common.domain.Constants;
 import io.github.jhipster.common.domain.error.Assert;
 
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Set;
 
 public class User {
@@ -44,6 +45,77 @@ public class User {
             .minLength(1)
             .maxLength(50)
             .format(Constants.LOGIN_REGEX);
+
+        Assert.field("firstName", builder.firstName)
+            .maxLength(50);
+
+        Assert.field("lastName", builder.lastName)
+            .maxLength(50);
+
+        Assert.field("langKey", builder.langKey)
+            .minLength(2)
+            .maxLength(10);
+
+        Assert.field("imageUrl", builder.imageUrl)
+            .maxLength(256);
+
+        Assert.field("email", builder.email)
+            .minLength(5)
+            .maxLength(254)
+            .format(Constants.EMAIL_REGEX);
+    }
+
+
+    public String getLogin() {
+        return this.login;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public boolean isActivated() {
+        return activated;
+    }
+
+    public String getLangKey() {
+        return langKey;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public Instant getCreatedDate() {
+        return createdDate;
+    }
+
+    public String getLastModifiedBy() {
+        return lastModifiedBy;
+    }
+
+    public Instant getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public Set<String> getAuthorities() {
+        return authorities;
     }
 
     public static UserBuilder builder() {
@@ -62,7 +134,7 @@ public class User {
         private Instant createdDate;
         private String lastModifiedBy;
         private Instant lastModifiedDate;
-        private Set<String>authorities;
+        private final Set<String> authorities = new HashSet<>();
 
         public User build() {
             return new User(this);
@@ -123,8 +195,8 @@ public class User {
             return this;
         }
 
-        public UserBuilder authorities(Set<String> authorities) {
-            this.authorities = authorities;
+        public UserBuilder authority(String authority) {
+            this.authorities.add(authority);
             return this;
         }
     }
