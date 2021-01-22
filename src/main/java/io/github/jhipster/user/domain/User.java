@@ -2,6 +2,7 @@ package io.github.jhipster.user.domain;
 
 import io.github.jhipster.common.domain.Constants;
 import io.github.jhipster.common.domain.error.Assert;
+import io.github.jhipster.user.infrastructure.primary.dto.UserDTO;
 
 import java.time.Instant;
 import java.util.HashSet;
@@ -14,7 +15,7 @@ public class User {
     private final String lastName;
     private final String email;
     private final String imageUrl;
-    private final boolean activated = false;
+    private final boolean activated;
     private final String langKey;
     private final String createdBy;
     private final Instant createdDate;
@@ -27,8 +28,8 @@ public class User {
 
         this.id = builder.id;
         this.login = builder.login;
-        this.firstName = builder.firstName;
         this.lastName = builder.lastName;
+        this.firstName = builder.firstName;
         this.email = builder.email;
         this.imageUrl = builder.imageUrl;
         this.langKey = builder.langKey;
@@ -37,6 +38,24 @@ public class User {
         this.lastModifiedBy = builder.lastModifiedBy;
         this.lastModifiedDate = builder.lastModifiedDate;
         this.authorities = builder.authorities;
+        this.activated = builder.activated;
+    }
+
+    public static User toDomain(UserDTO dto) {
+        return User.builder()
+            .login(dto.getLogin())
+            .email(dto.getEmail())
+            .langKey(dto.getLangKey())
+            .lastName(dto.getLastName())
+            .firstName(dto.getFirstName())
+            .createdBy(dto.getCreatedBy())
+            .createdDate(dto.getCreatedDate())
+            .lastModifiedBy(dto.getLastModifiedBy())
+            .lastModifiedDate(dto.getLastModifiedDate())
+            .imageUrl(dto.getImageUrl())
+            .authorities(dto.getAuthorities())
+            .activated(dto.isActivated())
+            .build();
     }
 
     private void assertFields(UserBuilder builder) {
@@ -135,6 +154,7 @@ public class User {
         private String lastModifiedBy;
         private Instant lastModifiedDate;
         private final Set<String> authorities = new HashSet<>();
+        private boolean activated;
 
         public User build() {
             return new User(this);
@@ -197,6 +217,18 @@ public class User {
 
         public UserBuilder authority(String authority) {
             this.authorities.add(authority);
+            return this;
+        }
+
+        public UserBuilder authorities(Set<String> authorities) {
+            if(authorities != null) {
+                this.authorities.addAll(authorities);
+            }
+            return this;
+        }
+
+        public UserBuilder activated(boolean activated) {
+            this.activated = activated;
             return this;
         }
     }
